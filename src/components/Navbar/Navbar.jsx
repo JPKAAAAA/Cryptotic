@@ -3,6 +3,8 @@ import navstyle from './navbar.module.css';
 import logo from '../../assets/logo-cryptotic.png';
 import aicon from '../../assets/aicon.png';
 import { coinContext } from '../../context/CoinContext';
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
 
   const setCurrency=useContext(coinContext)
@@ -11,7 +13,7 @@ const Navbar = () => {
     switch(e.target.value)
     {
       case "usd": {
-        setCurrency({name:"usd",symbol:"$"});
+        setCurrency({name:"usd",symbol:"d"});
         break;
       }
       case "euro": {
@@ -32,11 +34,17 @@ const Navbar = () => {
   return (
     <div className={navstyle.navbar}>
       <div className={navstyle.logodiv}>
-        <img src={logo} alt="logo" className={navstyle.logo}/>
-        <h3>CryptoTic</h3>
+        <Link to="/Cryptotic/">
+          <img src={logo} alt="logo" className={navstyle.logo}/>
+        </Link>
+        <Link to="/Cryptotic/">
+          <h3 className={navstyle.brandName}>CryptoTic</h3>
+        </Link>
       </div>
         <ul>
-            <li>Home</li>
+            <Link to="/Cryptotic/">
+              <li>Home</li>
+            </Link>
             <li>Features</li>
             <li>Pricing</li>
             <li>Blog</li>

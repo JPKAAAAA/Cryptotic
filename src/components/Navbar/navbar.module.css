@@ -86,3 +86,9 @@
         width: 12px;
     }
 }
+
+@media (max-width: 400px) {
+    .brandName{
+        display: none;
+    }
+}
